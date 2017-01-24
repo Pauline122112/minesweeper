@@ -6,12 +6,19 @@ var board = {
     {row:1, col:1, isMine:false, hidden:true},
     {row:1, col:2, isMine:true, hidden:true},
     {row:1, col:3, isMine:true, hidden:true},
+    {row:1, col:4, isMine:true, hidden:true},
     {row:2, col:1, isMine:false, hidden:true},
     {row:2, col:2, isMine:true, hidden:true},
     {row:2, col:3, isMine:false, hidden:true},
+    {row:2, col:4, isMine:false, hidden:true},
     {row:3, col:1, isMine:true, hidden:true},
     {row:3, col:2, isMine:true, hidden:true},
-    {row:3, col:3, isMine:false, hidden:true}
+    {row:3, col:3, isMine:false, hidden:true},
+    {row:3, col:4, isMine:false, hidden:true},
+    {row:4, col:1, isMine:true, hidden:true},
+    {row:4, col:2, isMine:true, hidden:true},
+    {row:4, col:3, isMine:false, hidden:true},
+    {row:4, col:4, isMine:false, hidden:true}
   ]
 
 };
@@ -47,7 +54,7 @@ function checkForWin () {
 // them, counting the number of times `cell.isMine` is true.
 function countSurroundingMines (cell) {
 var surroundingCells =
-  lib.getSurroundingCells(cell.row, cell.col);
+  getSurroundingCells(cell.row, cell.col);
   var count = 0;
   for(var i = 0; i < surroundingCells.length; i++){
     if(surroundingCells[i].isMine === true)
