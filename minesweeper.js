@@ -41,7 +41,7 @@ function checkForWin () {
 
   // You can use this function call to declare a winner (once you've
   // detected that they've won, that is!)
- lib.displayMessage('You win!')
+  //   lib.displayMessage('You win!')
 }
 
 // Define this function to count the number of mines around the cell
@@ -54,11 +54,14 @@ function checkForWin () {
 // them, counting the number of times `cell.isMine` is true.
 function countSurroundingMines (cell) {
 var surroundingCells =
-  getSurroundingCells(cell.row, cell.col);
+  getSurroundingCells(cell.row, cell.col, cell.isMine, cell.isMarked);
+
   var count = 0;
+
   for(var i = 0; i < surroundingCells.length; i++){
     if(surroundingCells[i].isMine === true)
     {
+
       count += 1000;
     }
   }
